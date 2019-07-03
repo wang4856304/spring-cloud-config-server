@@ -3,7 +3,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/wang4856304/config-repo
-          search-paths: config
+          uri: https://github.com/wang4856304/config-repo #默认仓库地址
+          search-paths: config, bar*  #目录搜索,将在config和以bar开头的目录中，搜索配置文件。
           username: wang4856304  #账号密码写真实的快一些我觉得，不使用也能访问有点慢
           password: wang038088
+          repos:  #多仓库
+            test:
+              pattern: test*  #仓库正则匹配
+              uri: https://github.com/test/config-repo
